@@ -26,7 +26,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -40,7 +40,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-BaseSuite" class="navigator-link">
-              <span class="suite-name border-passed">BaseSuite</span>
+              <span class="suite-name border-failed">BaseSuite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -93,26 +93,35 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">2 methods,   2 passed</span>
+                    <span class="method-stats">2 methods, 1 failed,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-BaseSuite" class="hide-methods passed suite-BaseSuite"> (hide)</a> <!-- hide-methods passed suite-BaseSuite -->
-                      <a href="#" panel-name="suite-BaseSuite" class="show-methods passed suite-BaseSuite"> (show)</a> <!-- show-methods passed suite-BaseSuite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-BaseSuite" class="hide-methods failed suite-BaseSuite"> (hide)</a> <!-- hide-methods failed suite-BaseSuite -->
+                      <a href="#" panel-name="suite-BaseSuite" class="show-methods failed suite-BaseSuite"> (show)</a> <!-- show-methods failed suite-BaseSuite -->
                     </span>
-                    <div class="method-list-content passed suite-BaseSuite">
+                    <div class="method-list-content failed suite-BaseSuite">
                       <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-BaseSuite" title="org.selenium.testng.TC_Login" class="method navigator-link" hash-for-method="verifyLogout">verifyLogout</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
+                        <img src="failed.png" width="3%"/>
                         <a href="#" panel-name="suite-BaseSuite" title="org.selenium.testng.TC_Login" class="method navigator-link" hash-for-method="verifyValidLogin">verifyValidLogin</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-BaseSuite -->
+                    </div> <!-- method-list-content failed suite-BaseSuite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-BaseSuite" class="hide-methods skipped suite-BaseSuite"> (hide)</a> <!-- hide-methods skipped suite-BaseSuite -->
+                      <a href="#" panel-name="suite-BaseSuite" class="show-methods skipped suite-BaseSuite"> (show)</a> <!-- show-methods skipped suite-BaseSuite -->
+                    </span>
+                    <div class="method-list-content skipped suite-BaseSuite">
+                      <span>
+                        <img src="skipped.png" width="3%"/>
+                        <a href="#" panel-name="suite-BaseSuite" title="org.selenium.testng.TC_Login" class="method navigator-link" hash-for-method="verifyLogout">verifyLogout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content skipped suite-BaseSuite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -124,9 +133,48 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-BaseSuite" class="panel BaseSuite">
-          <div class="suite-BaseSuite-class-passed">
+          <div class="suite-BaseSuite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="passed.png"/>
+              <img src="failed.png"/>
+              <span class="class-name">org.selenium.testng.TC_Login</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyValidLogin">
+                  </a> <!-- verifyValidLogin -->
+                  <span class="method-name">verifyValidLogin</span>
+                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//button[contains(.,&apos;Logi n&apos;)]&quot;}
+  (Session info: chrome=110.0.5481.178)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: &apos;4.8.0&apos;, revision: &apos;267030adea&apos;
+System info: os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e0e3afad936fadd97eaf5dc2aa94ccbf, findElement {using=xpath, value=//button[contains(.,&apos;Logi n&apos;)]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 110.0.5481.178, chrome: {chromedriverVersion: 110.0.5481.77 (65ed616c6e8e..., userDataDir: C:\Users\JKIRAN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:59918}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59918/devtoo..., se:cdpVersion: 110.0.5481.178, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: e0e3afad936fadd97eaf5dc2aa94ccbf
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.selenium.testng.TC_Login.verifyValidLogin(TC_Login.java:24)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 32 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-BaseSuite-class-failed -->
+          <div class="suite-BaseSuite-class-skipped">
+            <div class="main-panel-header rounded-window-top">
+              <img src="skipped.png"/>
               <span class="class-name">org.selenium.testng.TC_Login</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
@@ -135,17 +183,14 @@
                   <a name="verifyLogout">
                   </a> <!-- verifyLogout -->
                   <span class="method-name">verifyLogout</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="verifyValidLogin">
-                  </a> <!-- verifyValidLogin -->
-                  <span class="method-name">verifyValidLogin</span>
+                  <div class="stack-trace">java.lang.Throwable: Method TC_Login.verifyLogout()[pri:0, instance:org.selenium.testng.TC_Login@26e356f0] depends on not successfully finished methods
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 18 stack frames
+</div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-BaseSuite-class-passed -->
+          </div> <!-- suite-BaseSuite-class-skipped -->
         </div> <!-- panel BaseSuite -->
         <div panel-name="test-xml-BaseSuite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -200,18 +245,18 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyLogout')
+data.setCell(0, 1, 'verifyValidLogin')
 data.setCell(0, 2, 'org.selenium.testng.TC_Login')
-data.setCell(0, 3, 2763);
+data.setCell(0, 3, 20560);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyValidLogin')
+data.setCell(1, 1, 'verifyLogout')
 data.setCell(1, 2, 'org.selenium.testng.TC_Login')
-data.setCell(1, 3, 2309);
+data.setCell(1, 3, 0);
 window.suiteTableData['BaseSuite']= { tableData: data, tableDiv: 'times-div-BaseSuite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 seconds</span>
+              <span class="suite-total-time">Total running time: 20 seconds</span>
               <div id="times-div-BaseSuite">
               </div> <!-- times-div-BaseSuite -->
             </div> <!-- times-div -->
@@ -244,19 +289,21 @@ return data;
               </div> <!-- configuration-suite before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeClass</span>
-                <span class="method-start">1651 ms</span>
+                <span class="method-start">1921 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">verifyValidLogin</span>
-                <span class="method-start">4863 ms</span>
+                <span class="method-start">4819 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyLogout</span>
-                <span class="method-start">7176 ms</span>
+                <span class="method-start">25379 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterClass</span>
-                <span class="method-start">9941 ms</span>
+                <span class="method-start">25395 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
