@@ -21,7 +21,7 @@ public class TC_Login extends BaseClass{
 	public void verifyValidLogin() {
 		driver.findElement(By.name("username")).sendKeys("Admin");
 		driver.findElement(By.name("password")).sendKeys("admin123");
-		driver.findElement(By.xpath("//button[contains(.,'Login')]")).click();
+		driver.findElement(By.xpath("//button[contains(.,'Logi n')]")).click();
 		
 		assertTrue(driver.findElement(By.xpath("//h6[contains(.,'Dashboard')]")).isDisplayed(), "Unable to login with valid credentials");
 	}
